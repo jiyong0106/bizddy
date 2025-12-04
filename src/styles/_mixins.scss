@@ -1,0 +1,28 @@
+@mixin flex-arrange($justify-content: center, $align-items: center) {
+  //@include flex-arrange => 기본값 center
+  display: flex;
+
+  //null이 아닐때만 적용
+  @if $justify-content != null {
+    justify-content: $justify-content;
+  }
+  @if $align-items != null {
+    align-items: $align-items;
+  }
+}
+
+@mixin font-arrange($font-size: 1.4rem, $font-weight: 400, $color: black) {
+  font-size: $font-size;
+
+  @if $font-weight != null {
+    font-weight: $font-weight;
+  }
+
+  @if $color != null {
+    color: $color;
+  }
+}
+
+// 사용법:
+// @include flex-arrange(null, null);
+// @include font-arrange(1.2rem, 500, #ef4444);
