@@ -1,5 +1,83 @@
+@use "../../../styles/_variables.scss" as v;
+
 .container {
+  position: sticky;
+  top: 0;
+  z-index: 50;
   width: 100%;
-  height: 100px;
-  background-color: #000;
+  background: v.$bg;
+  border-bottom: 1px solid v.$divider;
+  color: v.$text-primary;
+  backdrop-filter: saturate(120%) blur(6px);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: v.$logo;
+}
+
+.nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: block;
+  }
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.menuItem {
+  font-size: 1.4rem;
+  color: v.$text-secondary;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.menuItem:hover {
+  color: v.$text-primary;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: v.$primary;
+  color: v.$text-primary;
+  font-weight: 600;
+  font-size: 1.4rem;
+  transition: background 0.2s ease, transform 0.05s ease;
+}
+.cta:hover {
+  background: v.$primary-hover;
+}
+.cta:active {
+  transform: translateY(1px);
 }
