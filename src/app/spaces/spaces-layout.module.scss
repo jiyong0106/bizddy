@@ -13,31 +13,8 @@
     "main";
 }
 
-.topbar {
+.topbarArea {
   grid-area: topbar;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 56px;
-  padding: 0 12px;
-  background: v.$card;
-  border-bottom: 1px solid v.$divider;
-}
-.brand {
-  font-weight: 800;
-  color: v.$logo;
-}
-.moreBtn {
-  background: v.$primary;
-  color: v.$text-primary;
-  border: 0;
-  height: 32px;
-  padding: 0 12px;
-  border-radius: 8px;
-  font-weight: 600;
-}
-.moreBtn:hover {
-  background: v.$primary-hover;
 }
 
 .sidebar {
@@ -84,7 +61,7 @@
     grid-template-rows: 1fr;
     grid-template-areas: "sidebar main";
   }
-  .topbar {
+  .topbarArea {
     display: none;
   }
   .sidebar {

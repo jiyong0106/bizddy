@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import clsx from "clsx";
-import Navbar from "@/components/spaces/navbar";
+import { Navbar, Topbar } from "@/components/spaces";
 import styles from "./spaces-layout.module.scss";
 
 export default function SpacesLayout({
@@ -14,15 +14,8 @@ export default function SpacesLayout({
 
   return (
     <section className={styles.container}>
-      <div className={styles.topbar}>
-        <div className={styles.brand}>bizddy</div>
-        <button
-          type="button"
-          className={styles.moreBtn}
-          onClick={() => setOpen(true)}
-        >
-          더보기
-        </button>
+      <div className={styles.topbarArea}>
+        <Topbar onMoreClick={() => setOpen(true)} />
       </div>
 
       <aside className={clsx(styles.sidebar, open && styles.open)}>
