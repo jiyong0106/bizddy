@@ -18,13 +18,16 @@ const LandingHeader = () => {
         <nav className={styles.nav}>
           <ul className={styles.menu}>
             {menuItems.map((item) => (
-              <li className={styles.menuItem}>{item.label}</li>
+              <li key={item.href} className={styles.menuItem}>
+                <Link href={item.href}>{item.label}</Link>
+              </li>
             ))}
           </ul>
         </nav>
 
         <div className={styles.actions}>
           <Link href={"/login"}>시작하기</Link>
+          <Link href={"/login"}>메인페이지</Link>
         </div>
       </div>
     </header>
