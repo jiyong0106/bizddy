@@ -9,7 +9,7 @@ const Topbar = ({ onMoreClick }: Props) => {
     <div className={styles.container}>
       <div className={styles.brand}>bizddy</div>
       <button type="button" className={styles.moreBtn} onClick={onMoreClick}>
-        더보기
+        더보
       </button>
     </div>
   );

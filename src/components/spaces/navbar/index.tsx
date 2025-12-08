@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./navbar.module.scss";
+import { Logo } from "@/components/common";
 
 const items = [
   { label: "홈", href: "/spaces" },
@@ -14,18 +15,16 @@ const items = [
 const Navbar = () => {
   return (
     <aside className={styles.container}>
-      <div className={styles.logo}>bizddy</div>
-      <nav className={styles.nav}>
-        <ul className={styles.menu}>
-          {items.map((it) => (
-            <li key={it.href} className={styles.item}>
-              <Link href={it.href} className={styles.link}>
-                {it.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <Logo size={24} />
+      <ul className={styles.menu}>
+        {items.map((it) => (
+          <li key={it.href} className={styles.item}>
+            <Link href={it.href} className={styles.link}>
+              {it.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </aside>
   );
 };
