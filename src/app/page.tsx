@@ -1,5 +1,5 @@
 import styles from "./page.module.scss";
-import LandingHeader from "@/components/landing/landing-header";
+import { LandingHeader } from "@/components/landing";
 
 export default function Home() {
   return (
