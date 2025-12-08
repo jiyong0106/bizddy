@@ -1,6 +1,9 @@
+"use client";
 import Link from "next/link";
 import styles from "./navbar.module.scss";
 import { Logo } from "@/components/common";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
 
 const items = [
   { label: "홈", href: "/spaces" },
@@ -13,13 +16,21 @@ const items = [
 ];
 
 const Navbar = () => {
+  const pathname = usePathname();
+
   return (
     <aside className={styles.container}>
       <Logo size={24} />
       <ul className={styles.menu}>
         {items.map((it) => (
           <li key={it.href} className={styles.item}>
-            <Link href={it.href} className={styles.link}>
+            <Link
+              href={it.href}
+              className={clsx(
+                styles.link,
+                pathname === it.href && styles.active
+              )}
+            >
               {it.label}
             </Link>
           </li>

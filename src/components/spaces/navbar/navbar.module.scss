@@ -48,6 +48,11 @@
   color: v.$text-primary;
 }
 
+.active {
+  background: v.$divider;
+  color: v.$logo;
+}
+
 @media (min-width: 768px) {
   .container {
     background: v.$sidebarBg;
