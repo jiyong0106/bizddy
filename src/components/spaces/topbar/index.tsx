@@ -1,16 +1,23 @@
 import styles from "./topbar.module.scss";
+import { IoListOutline, IoCloseOutline } from "react-icons/io5";
 
 interface Props {
   onMoreClick: () => void;
+  open: boolean;
 }
 
-const Topbar = ({ onMoreClick }: Props) => {
+const Topbar = ({ onMoreClick, open }: Props) => {
+  const Icon = open ? IoCloseOutline : IoListOutline;
+
   return (
     <div className={styles.container}>
-      <div className={styles.brand}>bizddy</div>
-      <button type="button" className={styles.moreBtn} onClick={onMoreClick}>
-        더보
-      </button>
+      <Icon
+        className={styles.moreIcon}
+        onClick={onMoreClick}
+        aria-label="메뉴 열기/닫기"
+      />
+
+      <p>박지용</p>
     </div>
   );
 };

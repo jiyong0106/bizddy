@@ -15,7 +15,7 @@ export default function SpacesLayout({
   return (
     <section className={styles.container}>
       <div className={styles.topbarArea}>
-        <Topbar onMoreClick={() => setOpen(true)} />
+        <Topbar onMoreClick={() => setOpen((prev) => !prev)} open={open} />
       </div>
 
       <aside className={clsx(styles.sidebar, open && styles.open)}>
