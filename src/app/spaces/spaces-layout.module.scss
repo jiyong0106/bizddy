@@ -1,0 +1,110 @@
+@use "@/styles/_variables.scss" as v;
+
+.container {
+  background: v.$bg;
+  color: v.$text-primary;
+  min-height: 100dvh;
+  display: grid;
+  /* Mobile-first: 상단바 + 본문 (사이드바는 오프캔버스) */
+  grid-template-columns: 1fr;
+  grid-template-rows: 56px 1fr;
+  grid-template-areas:
+    "topbar"
+    "main";
+}
+
+.topbar {
+  grid-area: topbar;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 12px;
+  background: v.$card;
+  border-bottom: 1px solid v.$divider;
+}
+.brand {
+  font-weight: 800;
+  color: v.$logo;
+}
+.moreBtn {
+  background: v.$primary;
+  color: v.$text-primary;
+  border: 0;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.moreBtn:hover {
+  background: v.$primary-hover;
+}
+
+.sidebar {
+  /* off-canvas on mobile */
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 260px;
+  z-index: 20;
+  background: v.$card;
+  border-right: 1px solid v.$divider;
+  transform: translateX(-100%);
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
+.open {
+  transform: translateX(0);
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 15;
+}
+
+.main {
+  grid-area: main;
+  min-width: 0; /* prevent overflow */
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Tablet+ 레이아웃: 좌측 사이드바 고정 + 본문 */
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "sidebar main";
+  }
+  .topbar {
+    display: none;
+  }
+  .sidebar {
+    position: sticky;
+    left: auto;
+    top: 0;
+    bottom: auto;
+    width: auto;
+    height: 100dvh;
+    transform: none;
+    border-right: 1px solid v.$divider;
+  }
+  .overlay {
+    display: none;
+  }
+}
+
+/* Desktop+: 사이드바 너비 확장 선택 */
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: 260px 1fr;
+  }
+}
