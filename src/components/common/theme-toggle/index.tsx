@@ -10,35 +10,20 @@ type ThemeMode = "light" | "dark";
 const ThemeToggle = () => {
   const [mode, setMode] = useState<ThemeMode>("light");
 
-  // initialize from localStorage or system
+  // initialize from cookie (fallback to light)
   useEffect(() => {
-    try {
-      const stored =
-        (localStorage.getItem("theme") as ThemeMode | null) ?? null;
-      if (stored === "light" || stored === "dark") {
-        setMode(stored);
-        document.documentElement.setAttribute("data-theme", stored);
-        document.documentElement.style.colorScheme = stored;
-      } else {
-        const systemDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
-        const resolved: ThemeMode = systemDark ? "dark" : "light";
-        setMode(resolved);
-        document.documentElement.setAttribute("data-theme", resolved);
-        document.documentElement.style.colorScheme = resolved;
-      }
-    } catch {}
+    const match = document.cookie.match(/(?:^|;\\s*)theme=(light|dark)/);
+    const initial = (match?.[1] as ThemeMode | undefined) ?? "light";
+    setMode(initial);
+    document.documentElement.setAttribute("data-theme", initial);
   }, []);
 
   const toggle = () => {
     const next: ThemeMode = mode === "light" ? "dark" : "light";
     setMode(next);
-    try {
-      localStorage.setItem("theme", next);
-    } catch {}
+    // persist to cookie (1 year)
+    document.cookie = `theme=${next}; path=/; max-age=31536000; samesite=lax`;
     document.documentElement.setAttribute("data-theme", next);
-    document.documentElement.style.colorScheme = next;
   };
 
   const isLight = mode === "light";

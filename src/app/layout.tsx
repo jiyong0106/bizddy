@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/globals.css";
 import QueryProvider from "@/libs/queryProvider";
+import { cookies } from "next/headers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,30 +19,19 @@ export const metadata: Metadata = {
   description: "bizddy",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const theme =
+    (cookieStore.get("theme")?.value as "light" | "dark" | undefined) ??
+    undefined;
+
   return (
-    <html lang="ko">
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-  (function () {
-    try {
-      var stored = localStorage.getItem('theme'); // 'light' | 'dark' | null
-      var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      var resolved = stored ? stored : (systemDark ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', resolved);
-      document.documentElement.style.colorScheme = resolved;
-    } catch (e) {}
-  })();
-            `,
-          }}
-        />
-      </head>
+    <html lang="ko" data-theme={theme} suppressHydrationWarning>
+      <head />
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <QueryProvider>{children}</QueryProvider>
       </body>
