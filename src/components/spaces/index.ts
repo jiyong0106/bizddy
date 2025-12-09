@@ -1,2 +1,2 @@
-export { default as Navbar } from "./navbar";
-export { default as Topbar } from "./topbar";
+export { default as Navbar } from "../common/navbar";
+export { default as Topbar } from "../common/topbar";

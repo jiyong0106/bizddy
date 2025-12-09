@@ -25,6 +25,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+  (function () {
+    try {
+      var stored = localStorage.getItem('theme'); // 'light' | 'dark' | null
+      var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var resolved = stored ? stored : (systemDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', resolved);
+      document.documentElement.style.colorScheme = resolved;
+    } catch (e) {}
+  })();
+            `,
+          }}
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <QueryProvider>{children}</QueryProvider>
       </body>

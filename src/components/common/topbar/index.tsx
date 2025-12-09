@@ -1,5 +1,6 @@
 import styles from "./topbar.module.scss";
 import { IoListOutline, IoCloseOutline } from "react-icons/io5";
+import { ThemeToggle } from "@/components/common";
 
 interface Props {
   onMoreClick: () => void;
@@ -18,6 +19,7 @@ const Topbar = ({ onMoreClick, open }: Props) => {
       />
 
       <p>박지용</p>
+      <ThemeToggle />
     </div>
   );
 };
