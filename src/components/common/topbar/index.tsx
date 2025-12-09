@@ -18,8 +18,10 @@ const Topbar = ({ onMoreClick, open }: Props) => {
         aria-label="메뉴 열기/닫기"
       />
 
-      <p>박지용</p>
-      <ThemeToggle />
+      <div className={styles.brand}>
+        <p>박지용</p>
+        <ThemeToggle />
+      </div>
     </div>
   );
 };
