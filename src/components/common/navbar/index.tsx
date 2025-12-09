@@ -8,11 +8,13 @@ import clsx from "clsx";
 const items = [
   { label: "홈", href: "/spaces" },
   { label: "상품 관리", href: "/spaces/products" },
-  { label: "멤버십 관리", href: "/spaces/memberships" },
-  { label: "스토어 관리", href: "/spaces/store" },
-  { label: "고객 관리", href: "/spaces/customers" },
-  { label: "판매 부스터", href: "/spaces/boost" },
-  { label: "스페이스 설정", href: "/spaces/settings" },
+  { label: "주문 관리", href: "/spaces/orders" },
+  { label: "재고 관리", href: "/spaces/inventory" },
+  { label: "문의", href: "/spaces/support" },
+  { label: "정산", href: "/spaces/settlements" },
+  { label: "통계 / 분석", href: "/spaces/analytics" },
+  { label: "콘텐츠 스튜디오", href: "/spaces/contents" },
+  { label: "설정", href: "/spaces/settings" },
 ];
 
 const Navbar = () => {
