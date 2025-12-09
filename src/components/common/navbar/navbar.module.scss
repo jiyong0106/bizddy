@@ -7,16 +7,8 @@
   color: v.$text-primary;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   padding: 30px 20px;
-}
-
-.logo {
-  font-weight: 800;
-  color: v.$logo;
-  margin-bottom: 8px;
-  padding: 0 8px;
-  font-size: 1.8rem;
 }
 
 .nav {
@@ -25,10 +17,17 @@
 
 .menu {
   list-style: none;
-  display: grid;
-  gap: 4px;
-  padding: 0;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sectionTitle {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: v.$text-secondary;
+  padding: 8px 4px;
+  margin-bottom: 5px;
 }
 
 .item {
@@ -39,18 +38,24 @@
   display: block;
   color: v.$text-secondary;
   text-decoration: none;
-  padding: 10px 12px;
-  border-radius: 10px;
+  padding: 6px 16px;
   transition: background 0.2s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
+
 .link:hover {
-  background: v.$divider;
   color: v.$text-primary;
 }
 
+.icon {
+  font-size: 2.4rem;
+}
+
 .active {
-  background: v.$divider;
   color: v.$logo;
+  border-left: 3px solid v.$logo;
 }
 
 @media (min-width: 768px) {
