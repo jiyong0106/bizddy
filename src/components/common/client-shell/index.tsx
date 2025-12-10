@@ -2,7 +2,7 @@
 import { useState } from "react";
 import clsx from "clsx";
 import { Navbar, Topbar } from "@/components/spaces";
-import styles from "@/app/spaces/spaces-layout.module.scss";
+import styles from "./client-shell.module.scss";
 
 export default function ClientShell({
   children,
