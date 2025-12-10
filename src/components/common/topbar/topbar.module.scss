@@ -10,8 +10,10 @@
 }
 
 .brand {
-  font-weight: 800;
-  color: v.$logo;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: auto;
 }
 
 .moreIcon {

@@ -1,22 +1,23 @@
-@use "sass:color";
-/* 전역 테마 색상 변수 */
+/* SCSS 변수 → CSS 변수 브리지 (런타임 테마 반응) */
 
 /* Base */
-$bg: #161a22; /* Background */
-$sidebarBg: #1c222e; /* Sidebar Background */
-$card: #232a38; /* Card */
-$text-primary: #f3f4f6; /* Primary Text */
-$text-secondary: #9ca3af; /* Secondary Text */
-$border: #1f242d; /* Border */
-$divider: #1a1e27; /* Divider */
+$bg: var(--bg);
+$sidebarBg: var(--sidebar-bg);
+$card: var(--card);
+$text-primary: var(--text-primary);
+$text-secondary: var(--text-secondary);
+$border: var(--border);
+$divider: var(--divider);
+$lgiht-icon-bg: var(--lgiht-icon-bg);
+$dark-icon-bg: var(--dark-icon-bg);
 
 /* Brand / Logo */
-$logo: #14b8a6; /* Logo main */
-$logo-alt: #a3e635; /* Logo alternative (commented option) */
+$logo: var(--logo);
+$logo-alt: var(--logo-alt);
 
 /* Primary (Buttons etc.) */
-$primary: #8b5cf6;
-$primary-hover: #a78bfa;
+$primary: var(--primary);
+$primary-hover: var(--primary-hover);
 
 /* Secondary button */
 $button-secondary-text: $text-primary;
@@ -25,33 +26,13 @@ $button-secondary-hover-bg: $divider;
 $button-secondary-hover-border: $divider;
 
 /* Accent (palette) */
-$accent: #f97316;
-$accent-hover: #fb923c;
+$accent: var(--accent);
+$accent-hover: var(--accent-hover);
 
 /* Semantic */
-$success: #38e3a9;
-$warning: #ffb84d;
-$error: #ff5e5e;
+$success: var(--success);
+$warning: var(--warning);
+$error: var(--error);
 
 /* Effects */
-$shadow-elev1: 0 10px 30px rgba(0, 0, 0, 0.25);
-
-/* 선택: 런타임 테마를 위한 CSS 변수 매핑 */
-// :root {
-//   --bg: #{$bg};
-//   --card: #{$card};
-//   --text-primary: #{$text-primary};
-//   --text-secondary: #{$text-secondary};
-//   --border: #{$border};
-//   --divider: #{$divider};
-//   --logo: #{$logo};
-//   --logo-alt: #{$logo-alt};
-//   --primary: #{$primary};
-//   --primary-hover: #{$primary-hover};
-//   --accent: #{$accent};
-//   --accent-hover: #{$accent-hover};
-//   --success: #{$success};
-//   --warning: #{$warning};
-//   --error: #{$error};
-//   --shadow-elev1: #{$shadow-elev1};
-// }
+$shadow-elev1: var(--shadow-elev1);
