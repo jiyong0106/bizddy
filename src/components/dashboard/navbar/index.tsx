@@ -26,30 +26,44 @@ const sections: Array<{
   {
     title: "운영",
     items: [
-      { label: "상품 관리", href: "/spaces/products", icon: <LuShoppingBag /> },
-      { label: "주문 관리", href: "/spaces/orders", icon: <LuShoppingCart /> },
-      { label: "문의", href: "/spaces/support", icon: <LuHeadphones /> },
+      {
+        label: "상품 관리",
+        href: "/dashboard/products",
+        icon: <LuShoppingBag />,
+      },
+      {
+        label: "주문 관리",
+        href: "/dashboard/orders",
+        icon: <LuShoppingCart />,
+      },
+      { label: "문의", href: "/dashboard/support", icon: <LuHeadphones /> },
     ],
   },
   {
     title: "비즈니스",
     items: [
-      { label: "정산", href: "/spaces/settlements", icon: <LuWalletMinimal /> },
+      {
+        label: "정산",
+        href: "/dashboard/settlements",
+        icon: <LuWalletMinimal />,
+      },
       {
         label: "통계 / 분석",
-        href: "/spaces/analytics",
+        href: "/dashboard/analytics",
         icon: <LuChartColumnDecreasing />,
       },
       {
         label: "콘텐츠 스튜디오",
-        href: "/spaces/contents",
+        href: "/dashboard/contents",
         icon: <LuBlocks />,
       },
     ],
   },
   {
     title: "시스템",
-    items: [{ label: "설정", href: "/spaces/settings", icon: <LuSettings /> }],
+    items: [
+      { label: "설정", href: "/dashboard/settings", icon: <LuSettings /> },
+    ],
   },
 ];
 
