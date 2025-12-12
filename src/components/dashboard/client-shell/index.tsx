@@ -1,11 +1,10 @@
 "use client";
-
 import { useState } from "react";
 import clsx from "clsx";
-import { Navbar, Topbar } from "@/components/spaces";
-import styles from "./spaces-layout.module.scss";
+import { Navbar, Topbar } from "@/components/dashboard";
+import styles from "./client-shell.module.scss";
 
-export default function SpacesLayout({
+export default function ClientShell({
   children,
 }: {
   children: React.ReactNode;
@@ -13,7 +12,7 @@ export default function SpacesLayout({
   const [open, setOpen] = useState(false);
 
   return (
-    <section className={styles.container}>
+    <>
       <div className={styles.topbarArea}>
         <Topbar onMoreClick={() => setOpen((prev) => !prev)} open={open} />
       </div>
@@ -26,9 +25,7 @@ export default function SpacesLayout({
         <div className={styles.overlay} onClick={() => setOpen(false)} />
       )}
 
-      <main className={styles.main}>
-        <div className={styles.content}>{children}</div>
-      </main>
-    </section>
+      {children}
+    </>
   );
 }

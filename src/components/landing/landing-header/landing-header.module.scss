@@ -12,20 +12,16 @@
 }
 
 .inner {
+  @include flex-arrange(space-between, center);
   max-width: 1200px;
   margin: 0 auto;
   height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 0 16px;
 }
 
 .logo {
-  font-size: 2rem;
-  font-weight: 700;
+  @include font-arrange(2rem, 700, v.$logo);
   letter-spacing: 0.2px;
-  color: v.$logo;
 }
 
 .nav {
@@ -39,15 +35,13 @@
 }
 
 .menu {
+  @include flex-arrange(null, center);
   list-style: none;
-  display: flex;
-  align-items: center;
   gap: 20px;
 }
 
 .menuItem {
-  font-size: 1.4rem;
-  color: v.$text-secondary;
+  @include font-arrange(1.4rem, 500, v.$text-secondary);
   cursor: pointer;
   transition: color 0.2s ease;
 }
@@ -62,17 +56,13 @@
 }
 
 .cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-arrange(null, center);
+  @include font-arrange(1.4rem, 600, v.$text-primary);
   height: 36px;
   padding: 0 14px;
   border-radius: 8px;
   border: 1px solid transparent;
   background: v.$primary;
-  color: v.$text-primary;
-  font-weight: 600;
-  font-size: 1.4rem;
   transition: background 0.2s ease, transform 0.05s ease;
 }
 .cta:hover {

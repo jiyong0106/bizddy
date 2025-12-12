@@ -12,7 +12,7 @@ const ThemeToggle = () => {
 
   // initialize from cookie (fallback to light)
   useEffect(() => {
-    const match = document.cookie.match(/(?:^|;\\s*)theme=(light|dark)/);
+    const match = document.cookie.match(/(?:^|;\s*)theme=(light|dark)/);
     const initial = (match?.[1] as ThemeMode | undefined) ?? "light";
     setMode(initial);
     document.documentElement.setAttribute("data-theme", initial);

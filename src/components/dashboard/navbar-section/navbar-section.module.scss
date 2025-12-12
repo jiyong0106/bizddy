@@ -1,0 +1,42 @@
+@use "@/styles/_variables.scss" as v;
+
+.menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sectionTitle {
+  @include font-arrange(1.6rem, 500, v.$text-secondary);
+  padding: 8px 4px;
+}
+
+.item {
+  margin: 0;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  color: v.$text-secondary;
+  text-decoration: none;
+  padding: 6px 16px;
+  transition: color 0.2s ease;
+  gap: 12px;
+  border-left: 3px solid transparent; // active 시 레이아웃 흔들림 방지
+}
+
+.link:hover {
+  color: v.$text-primary;
+}
+
+.icon {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.active {
+  color: v.$logo;
+  border-left: 3px solid v.$logo;
+}
