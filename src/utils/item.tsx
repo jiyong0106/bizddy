@@ -21,34 +21,48 @@ export const sections: Array<{
     title: "상품",
     items: [
       {
-        label: "상품 관리",
+        label: "수집상품",
         href: "/dashboard/products",
         icon: <LuShoppingBag />,
       },
       {
-        label: "주문 관리",
+        label: "등록상품",
         href: "/dashboard/orders",
         icon: <LuShoppingCart />,
       },
-      { label: "문의", href: "/dashboard/support", icon: <LuHeadphones /> },
     ],
   },
   {
     title: "판매",
     items: [
       {
-        label: "정산",
+        label: "주문관리",
         href: "/dashboard/settlements",
+        icon: <LuShoppingCart />,
+      },
+      {
+        label: "정산",
+        href: "/dashboard/analytics",
         icon: <LuWalletMinimal />,
       },
       {
+        label: "문의",
+        href: "/dashboard/contents",
+        icon: <LuHeadphones />,
+      },
+    ],
+  },
+  {
+    title: "비즈니스",
+    items: [
+      {
         label: "통계 / 분석",
-        href: "/dashboard/analytics",
+        href: "/dashboard/settlements",
         icon: <LuChartColumnDecreasing />,
       },
       {
         label: "콘텐츠 스튜디오",
-        href: "/dashboard/contents",
+        href: "/dashboard/analytics",
         icon: <LuBlocks />,
       },
     ],
