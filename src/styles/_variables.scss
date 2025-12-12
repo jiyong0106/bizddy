@@ -1,3 +1,38 @@
-@use "sass:color";
-// $thema: #ffb591;
-/* 전역 테마색 */
+/* SCSS 변수 → CSS 변수 브리지 (런타임 테마 반응) */
+
+/* Base */
+$bg: var(--bg);
+$sidebarBg: var(--sidebar-bg);
+$card: var(--card);
+$text-primary: var(--text-primary);
+$text-secondary: var(--text-secondary);
+$border: var(--border);
+$divider: var(--divider);
+$lgiht-icon-bg: var(--lgiht-icon-bg);
+$dark-icon-bg: var(--dark-icon-bg);
+
+/* Brand / Logo */
+$logo: var(--logo);
+$logo-alt: var(--logo-alt);
+
+/* Primary (Buttons etc.) */
+$primary: var(--primary);
+$primary-hover: var(--primary-hover);
+
+/* Secondary button */
+$button-secondary-text: $text-primary;
+$button-secondary-border: $border;
+$button-secondary-hover-bg: $divider;
+$button-secondary-hover-border: $divider;
+
+/* Accent (palette) */
+$accent: var(--accent);
+$accent-hover: var(--accent-hover);
+
+/* Semantic */
+$success: var(--success);
+$warning: var(--warning);
+$error: var(--error);
+
+/* Effects */
+$shadow-elev1: var(--shadow-elev1);

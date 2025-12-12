@@ -1,0 +1,73 @@
+@use "@/styles/_variables.scss" as v;
+
+.container {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background: v.$bg;
+  border-bottom: 1px solid v.$divider;
+  color: v.$text-primary;
+  backdrop-filter: saturate(120%) blur(6px);
+}
+
+.inner {
+  @include flex-arrange(space-between, center);
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 64px;
+  padding: 0 16px;
+}
+
+.logo {
+  @include font-arrange(2rem, 700, v.$logo);
+  letter-spacing: 0.2px;
+}
+
+.nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: block;
+  }
+}
+
+.menu {
+  @include flex-arrange(null, center);
+  list-style: none;
+  gap: 20px;
+}
+
+.menuItem {
+  @include font-arrange(1.4rem, 500, v.$text-secondary);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.menuItem:hover {
+  color: v.$text-primary;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cta {
+  @include flex-arrange(null, center);
+  @include font-arrange(1.4rem, 600, v.$text-primary);
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: v.$primary;
+  transition: background 0.2s ease, transform 0.05s ease;
+}
+.cta:hover {
+  background: v.$primary-hover;
+}
+.cta:active {
+  transform: translateY(1px);
+}

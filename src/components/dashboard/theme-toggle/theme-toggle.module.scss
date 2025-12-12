@@ -1,0 +1,22 @@
+@use "@/styles/_variables.scss" as v;
+.container {
+  border-radius: 50px;
+  transition: background-color 0.15s ease;
+}
+
+.icon {
+  font-size: 4rem;
+  padding: 6px;
+  border-radius: 50px;
+}
+
+.lightIcon {
+  @extend .icon;
+  color: #000;
+  background: v.$lgiht-icon-bg;
+}
+.darkIcon {
+  @extend .icon;
+  color: #fff;
+  background: v.$dark-icon-bg;
+}
