@@ -1,9 +1,9 @@
-import styles from "./spaces-layout.module.scss";
-import { ClientShell } from "@/components/common";
+import styles from "./dashboard-layout.module.scss";
+import { ClientShell } from "@/components/dashboard";
 
 export const dynamic = "force-static";
 
-export default function SpacesLayout({
+export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;

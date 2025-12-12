@@ -11,7 +11,6 @@ import {
   LuChartColumnDecreasing,
   LuSettings,
   LuHeadphones,
-  LuPackageOpen,
   LuBlocks,
   LuWalletMinimal,
 } from "react-icons/lu";
@@ -22,18 +21,13 @@ const sections: Array<{
 }> = [
   {
     title: "",
-    items: [{ label: "홈", href: "/spaces", icon: <LuHouse /> }],
+    items: [{ label: "홈", href: "/dashboard", icon: <LuHouse /> }],
   },
   {
     title: "운영",
     items: [
       { label: "상품 관리", href: "/spaces/products", icon: <LuShoppingBag /> },
       { label: "주문 관리", href: "/spaces/orders", icon: <LuShoppingCart /> },
-      {
-        label: "재고 관리",
-        href: "/spaces/inventory",
-        icon: <LuPackageOpen />,
-      },
       { label: "문의", href: "/spaces/support", icon: <LuHeadphones /> },
     ],
   },

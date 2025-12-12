@@ -1,6 +1,6 @@
-import styles from "./spaces-page.module.scss";
+import styles from "./dashboard-page.module.scss";
 
-const SpacesPage = () => {
+const DashboardPage = () => {
   return (
     <div className={styles.container}>
       <h1>SpacesPage</h1>
@@ -9,4 +9,4 @@ const SpacesPage = () => {
   );
 };
 
-export default SpacesPage;
+export default DashboardPage;
