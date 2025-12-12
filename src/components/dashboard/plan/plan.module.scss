@@ -1,0 +1,18 @@
+@use "@/styles/_variables.scss" as v;
+.container {
+  @include font-arrange(1.4rem, 500, v.$text-secondary);
+  @include flex-arrange(space-between, center);
+  width: 100%;
+  background: v.$bg;
+  color: v.$text-secondary;
+  padding: 15px 10px;
+  border-radius: 10px;
+  border: 1px solid v.$border;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  &:hover {
+    background: v.$divider;
+    color: v.$text-primary;
+  }
+}

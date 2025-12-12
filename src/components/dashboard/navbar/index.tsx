@@ -1,101 +1,17 @@
-"use client";
-import Link from "next/link";
 import styles from "./navbar.module.scss";
 import { Logo } from "@/components/common";
-import { usePathname } from "next/navigation";
-import clsx from "clsx";
-import {
-  LuShoppingCart,
-  LuHouse,
-  LuShoppingBag,
-  LuChartColumnDecreasing,
-  LuSettings,
-  LuHeadphones,
-  LuBlocks,
-  LuWalletMinimal,
-} from "react-icons/lu";
-
-const sections: Array<{
-  title: string;
-  items: { label: string; href: string; icon: React.ReactNode }[];
-}> = [
-  {
-    title: "",
-    items: [{ label: "홈", href: "/dashboard", icon: <LuHouse /> }],
-  },
-  {
-    title: "운영",
-    items: [
-      {
-        label: "상품 관리",
-        href: "/dashboard/products",
-        icon: <LuShoppingBag />,
-      },
-      {
-        label: "주문 관리",
-        href: "/dashboard/orders",
-        icon: <LuShoppingCart />,
-      },
-      { label: "문의", href: "/dashboard/support", icon: <LuHeadphones /> },
-    ],
-  },
-  {
-    title: "비즈니스",
-    items: [
-      {
-        label: "정산",
-        href: "/dashboard/settlements",
-        icon: <LuWalletMinimal />,
-      },
-      {
-        label: "통계 / 분석",
-        href: "/dashboard/analytics",
-        icon: <LuChartColumnDecreasing />,
-      },
-      {
-        label: "콘텐츠 스튜디오",
-        href: "/dashboard/contents",
-        icon: <LuBlocks />,
-      },
-    ],
-  },
-  {
-    title: "시스템",
-    items: [
-      { label: "설정", href: "/dashboard/settings", icon: <LuSettings /> },
-    ],
-  },
-];
+import Plan from "../plan";
+import NavbarSection from "../navbar-section";
 
 const Navbar = () => {
-  const pathname = usePathname();
-
   return (
-    <aside className={styles.container}>
-      <Logo size={24} />
-
-      {sections.map((section) => (
-        <nav key={section.title}>
-          <div className={styles.sectionTitle}>{section.title}</div>
-          <ul className={styles.menu}>
-            {section.items.map((it) => (
-              <li key={it.href} className={styles.item}>
-                <Link
-                  href={it.href}
-                  className={clsx(
-                    styles.link,
-                    pathname === it.href && styles.active
-                  )}
-                >
-                  <div className={styles.icon}>{it.icon}</div>
-                  <span>{it.label}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      ))}
-    </aside>
+    <nav className={styles.container}>
+      <div className={styles.topSection}>
+        <Logo size={24} />
+        <Plan />
+      </div>
+      <NavbarSection />
+    </nav>
   );
 };
 
