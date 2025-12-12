@@ -35,7 +35,7 @@ $sidebar-width: 280px;
 
 @media (min-width: 1024px) {
   .sidebar {
-    transform: none; // 데스크탑에서는 항상 노출
+    transform: none;
   }
 
   .overlay {
