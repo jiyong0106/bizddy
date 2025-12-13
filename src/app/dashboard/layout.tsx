@@ -1,5 +1,5 @@
 import styles from "./dashboard-layout.module.scss";
-import { ClientShell } from "@/components/dashboard";
+import { ClientShell } from "@/components/layout";
 
 // export const dynamic = "force-static";
 

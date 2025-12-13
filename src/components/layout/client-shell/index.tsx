@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import clsx from "clsx";
-import { Navbar, Topbar } from "@/components/dashboard";
+import { Navbar, Topbar } from "@/components/layout";
 import styles from "./client-shell.module.scss";
 
 export default function ClientShell({
