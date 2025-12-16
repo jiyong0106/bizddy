@@ -1,0 +1,10 @@
+@use "@/styles/_variables.scss" as v;
+.badge {
+  @include flex-arrange(center, center);
+  @include font-arrange(1.2rem, 500, v.$text-secondary);
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: v.$divider;
+  color: v.$text-secondary;
+  width: fit-content;
+}

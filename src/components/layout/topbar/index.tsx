@@ -1,6 +1,6 @@
 import styles from "./topbar.module.scss";
 import { IoListOutline, IoCloseOutline } from "react-icons/io5";
-import { ThemeToggle } from "@/components/dashboard";
+import { ThemeToggle } from "@/components/layout";
 
 interface Props {
   onMoreClick: () => void;
