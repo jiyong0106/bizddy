@@ -7,7 +7,6 @@
   flex-direction: column;
   gap: 5px;
   padding: 80px 20px 20px 20px;
-
 }
 
 .topSection {
@@ -15,10 +14,10 @@
   padding: 10px 0 20px 0;
   position: relative;
 }
-.open{
+.open {
   display: flex;
 }
-.dropdown{
+.dropdown {
   position: absolute;
   width: 100%;
   max-width: 250px;
@@ -28,4 +27,3 @@
     padding: 20px;
   }
 }
-
