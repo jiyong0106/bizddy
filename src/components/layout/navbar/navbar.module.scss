@@ -12,8 +12,16 @@
 .topSection {
   border-bottom: 1px solid #d9d9d9;
   padding: 10px 0 20px 0;
+  position: relative;
 }
-
+.open {
+  display: flex;
+}
+.dropdown {
+  position: absolute;
+  width: 100%;
+  max-width: 250px;
+}
 @media (min-width: 768px) {
   .container {
     padding: 20px;

@@ -1,7 +1,12 @@
 import styles from "./plan-dorpdown.module.scss";
 import { LuLogOut, LuSettings, LuCreditCard } from "react-icons/lu";
+import clsx from "clsx";
 
-const PlanDropdown = () => {
+interface Props {
+  open: boolean;
+}
+
+const PlanDropdown = ({ open }: Props) => {
   const menuItems = [
     { label: "내 정보",  icon: <LuSettings /> },
     { label: "플랜",  icon: <LuCreditCard /> },
@@ -9,7 +14,7 @@ const PlanDropdown = () => {
   ];
 
   return (
-    <ul className={styles.container}>
+    <ul className={clsx(styles.container, { [styles.open]: open })}>
       {menuItems.map((item) => (
         <li key={item.label} className={styles.menu}>
           <div className={styles.icon}>{item.icon}</div>
