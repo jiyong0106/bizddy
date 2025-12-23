@@ -1,7 +1,4 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { supabase } from "@/libs/supabase/client";
+import { createClient } from "@/libs/supabase/client";
 
 interface TestData {
   id: number;
@@ -10,47 +7,12 @@ interface TestData {
   created_at: string;
 }
 
-const SupatestClient = () => {
-  const [data, setData] = useState<TestData[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+const SupatestClient = async () => {
+  // const supabase = await createClient();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const { data: testData, error: supabaseError } = await supabase
-          .from("test")
-          .select("*");
+  // const { data } = await supabase.from("todos").select();
 
-        if (supabaseError) {
-          throw supabaseError;
-        }
-
-        if (testData) {
-          setData(testData);
-        }
-      } catch (err: any) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (loading)
-    return (
-      <div style={{ padding: "10px" }}>
-        클라이언트에서 데이터를 불러오는 중...
-      </div>
-    );
-  if (error)
-    return (
-      <div style={{ padding: "10px", color: "red" }}>
-        클라이언트 에러: {error}
-      </div>
-    );
+  // const todos = data || [];
 
   return (
     <div
@@ -68,9 +30,9 @@ const SupatestClient = () => {
       <p style={{ fontSize: "14px", color: "#666" }}>
         이 데이터는 브라우저가 마운트된 후 클라이언트에서 직접 호출했습니다.
       </p>
-      {data.length > 0 ? (
+      {/* {todos.length > 0 ? (
         <ul style={{ paddingLeft: "20px" }}>
-          {data.map((item) => (
+          {todos.map((item) => (
             <li key={item.id} style={{ marginBottom: "10px" }}>
               <strong>{item.title}</strong>
               <div style={{ fontSize: "14px" }}>{item.content}</div>
@@ -79,7 +41,7 @@ const SupatestClient = () => {
         </ul>
       ) : (
         <p>데이터가 없습니다.</p>
-      )}
+      )} */}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import styles from "./dashboard-layout.module.scss";
 import { ClientShell } from "@/components/layout";
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
 export default function DashboardLayout({
   children,
