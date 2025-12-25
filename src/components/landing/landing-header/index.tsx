@@ -26,8 +26,8 @@ const LandingHeader = () => {
         </nav>
 
         <div className={styles.actions}>
-          <Link href={"/login"}>시작하기</Link>
-          <Link href={"/dashboard"}>메인페이지</Link>
+          {/* <Link href={"/login"}>시작하기</Link>
+          <Link href={"/dashboard"}>메인페이지</Link> */}
         </div>
       </div>
     </header>

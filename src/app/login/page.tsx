@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import LoginForm from "@/components/login/login-form";
+import { GoogleLoginForm } from "@/components/login";
 
 const LoginPage = () => {
   const [phone, setPhone] = useState("");
@@ -12,9 +12,7 @@ const LoginPage = () => {
     alert(`인증번호가 ${phone}으로 발송되었습니다.`);
   };
 
-  return (
-    <LoginForm phone={phone} onChangePhone={setPhone} onSubmit={handleSubmit} />
-  );
+  return <GoogleLoginForm />;
 };
 
 export default LoginPage;
